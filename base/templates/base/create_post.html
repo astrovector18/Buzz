@@ -1,0 +1,22 @@
+{% extends "main.html" %} 
+{% block content %}
+<style type="text/css" media="all">
+  .form {
+    max-width: 300px;
+    margin: 20px auto; 
+    padding: 10px;
+  }
+</style>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+   <div class="form"> 
+ 
+     <form action="" method="POST" accept-charset="utf-8">
+     {% csrf_token %}
+       {% bootstrap_form form %} 
+        <button type="submit" class="btn btn-primary">Post 🚀</button>
+     </form>
+    
+   </div>
+{% endblock content %}

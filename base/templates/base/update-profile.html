@@ -1,0 +1,16 @@
+{% extends 'main.html' %} 
+{% load static %}
+ {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}  
+  
+{% block content %} 
+   <div class="container ml-auto mr-auto mt-3">
+     <form action="" method="POST" enctype="multipart/form-data"> 
+     {% csrf_token %}
+       {% bootstrap_form  u_form %} 
+       {% bootstrap_form  p_form %} 
+       <button type="submit" class="btn btn-primary">Update</button>
+     </form>
+   </div>
+{% endblock content %}

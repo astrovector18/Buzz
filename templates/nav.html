@@ -1,0 +1,45 @@
+<header class="header">
+        <div class="logo">Buzz</div>
+        <nav class="desk-top-nav">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'create-post'%}">Create</a></li>
+                <li><a href="{% url 'profile' request.user.username %}">Profile</a></li> 
+                <li><a href="{% url 'logout'%}">Logout</a></li> 
+                {% else %}
+                <li><a href="{% url 'login'%}">Login</a></li> 
+                
+                {% endif %}
+            </ul>
+        </nav> 
+     {% if user.is_authenticated%}
+        <div class="user-avatar" id="usr-image">
+           <a href="{% url 'profile' request.user.id %}">
+        <img src="{{ request.user.profile.image.url }}" alt="User Avatar"/>
+        <span>{{ request.user.username }}</span></a>
+        </div>
+        {% endif %}
+        <button id="open-modal" class="open-modal-button">&#9776;</button>
+    </header> 
+    
+
+    <!-- The rest of your app content goes here -->
+
+    <!-- Modal navigation -->
+    <div id="mobile-modal" class="mobile-modal">
+        <nav class="nav">
+          <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url 'create-post'%}">Create</a></li>
+                <li><a href="{% url 'profile' request.user.username %}">Profile</a></li> 
+                <li><a href="{% url 'logout'%}">Logout</a></li> 
+                {% else %}
+                <li><a href="{% url 'login'%}">Login</a></li> 
+                
+                {% endif %}
+            </ul>
+        </nav>
+        <button id="close-modal" class="close-modal-button">&times;</button>
+    </div>

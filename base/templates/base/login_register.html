@@ -1,0 +1,45 @@
+{% extends "main.html"%}
+  {% block content%} 
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %} 
+  
+  <style type="text/css" media="all">
+  .form {
+    max-width: 300px;
+    margin: 20px auto; 
+    padding: 10px;
+  }
+</style>
+  
+{% if page %}
+<form action="" method="POST" accept-charset="utf-8" class="form">
+   {% csrf_token %} 
+   <div class="mb-3"> 
+   <label for="username" class="form-label">Username</label>
+    <input type="text" name="username" class="form-control"/>
+   
+   </div>
+    <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" name="password" class="form-control"/>
+    
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login🚀</button> 
+    <div class="">
+      <p>Don't have an account ?</p><span><a href="{% url 'register' %}">Register</a></span>
+    </div>
+</form>
+    {% else %} 
+   <form action="" method="POST" accept-charset="utf-8" class="form"> 
+     {% csrf_token %}
+     
+     {% bootstrap_form form %}
+     <button type="submit" class="btn btn-primary">Register 🚀</button>
+      <div class="">
+      <p>Already have an account ?</p><span><a href="{% url 'login' %}">Login</a></span>
+    </div>
+   </form>
+{% endif %}
+{% endblock content%}

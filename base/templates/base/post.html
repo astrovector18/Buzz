@@ -1,0 +1,15 @@
+ {% extends 'main.html' %}
+ {% block content %}
+    <section class="blog-details">
+<!--         <h2 class="section-title"> </h2> -->
+        <div class="blog-content">
+            <h3 class="blog-title"> {{ post.title }}</h3>
+            <p class="blog-meta"> Posted by ,
+            <span class="blog-author"> {{ post.author.username }}</span> 
+            <span class="blog-date">{{ post.created|timesince }} ago </span></p> 
+          <div class="main-blog">
+            <p class="blog-description"> {{ post.body }}</p> 
+            </div>
+        </div>
+  </section>
+{% endblock content %}

@@ -1,0 +1,8 @@
+{% extends 'main.html' %}
+{% block content %} 
+  <form method="POST">
+    {% csrf_token %}
+     <p> Do you want to Delete {{ obj.id }}</p> 
+     <button type="submit">Delete 🗑️</button>
+  </form>
+{% endblock content%}

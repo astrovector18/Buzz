@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Proza+Libre&display=swap");
+@import url("https://fonts.cdnfonts.com/css/typo-slab-serif");
+/* Header styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Proza Libre", sans-serif;
+}
+body {
+  position: relative;
+}
+.header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 20px;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 5px 20px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo styling */
+.logo {
+  font-size: 2rem;
+  color: #222;
+  font-family: "TypoSlabserif-Light", sans-serif;
+}
+
+/* Navigation styling */
+.desk-top-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.desk-top-nav {
+  margin: 0;
+  display: block;
+}
+
+.desk-top-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Style the links when hovered */
+.desk-top-nav a:hover {
+  color: #ff9900;
+}
+
+/* User avatar styling */
+.user-avatar img {
+  width: 32px; /* Adjust the size as needed */
+  height: 32px;
+  border-radius: 50%;
+}
+/*.user-avatar {
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+/* Mobile modal navigation (initially hidden) */
+.mobile-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+/* Navigation styling inside the modal */
+.mobile-modal .nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.mobile-modal .nav li {
+  margin-bottom: 20px;
+}
+
+.mobile-modal .nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Close button for the modal */
+.close-modal-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Style the open modal button */
+.open-modal-button {
+  font-size: 24px;
+  color: #222;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+/* Media query for showing the modal on mobile */
+@media screen and (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .open-modal-button {
+    display: block;
+  }
+
+  .mobile-modal {
+    display: none;
+  }
+  .desk-top-nav {
+    display: none;
+  }
+  #usr-image {
+    display: none;
+  }
+}
+
+/* Feed container */
+.posts-feed {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Individual posts */
+.post {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Post header */
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Author avatar */
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: fill;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+/* Author name */
+.author-name {
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Post title */
+.post-title {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Post body */
+.post-body {
+  margin-top: 10px;
+}
+
+/* Post buttons container */
+.post-actions {
+  margin-top: 10px;
+}
+
+/* Post buttons */
+/* Post buttons */
+.view-button,
+.edit-button,
+.delete-button {
+  padding: 5px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: transparent; /* Transparent background */
+  color: #333; /* Dark text color */
+  border: none; /* Remove borders */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+}
+
+/* Style the buttons on hover */
+.view-button:hover,
+.edit-button:hover,
+.delete-button:hover {
+  /*  background-color: #eee; /* Light gray background on hover 
+  color: #000; Black text color on hover */
+}
+/* Style the buttons with different colors */
+.view-button {
+  background-color: #008cba;
+  color: #fff;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.delete-button {
+  background-color: #ed3c3c;
+  color: #fff;
+}
+
+/* Style buttons on hover */
+.view-button:hover,
+.edit-button:hover,
+.delete-button:hover {
+  opacity: 0.8;
+}
+.post-time {
+  font-size: 12px; /* Adjust the font size as needed */
+  color: #888; /* Light gray color for the time */
+  margin-top: 5px; /* Add some spacing between time and author info */
+}
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .post-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .author-name {
+    font-size: 16px;
+  }
+
+  .post-title {
+    font-size: 20px;
+  }
+}
+/*Media query for desktop screens */
+@media screen and (min-width: 769px) {
+  .post-header {
+    flex-direction: row; /* Keep author info and time in a row */
+    align-items: center; /* Center vertically */
+  }
+
+  .author-info {
+    margin-bottom: 0; /* Remove margin between author info and time */
+  }
+
+  .post-time {
+    margin-left: 10px; /* Add some spacing between author info and time */
+  }
+}
+/* Blog details section */
+.blog-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+/* Section title */
+.section-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Blog title */
+.blog-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+/* Blog meta information */
+.blog-meta {
+  font-size: 14px;
+  color: #888;
+  margin-top: 5px;
+}
+
+/* Blog author and date */
+.blog-author,
+.blog-date {
+  font-weight: bold;
+}
+
+/* Blog description */
+.blog-description {
+  margin-top: 10px;
+}
+
+/* Media query for smaller screens (mobile) */
+@media screen and (max-width: 768px) {
+  /* Adjust font size and spacing for mobile */
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .blog-title {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .blog-meta {
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .blog-description {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+}
+.main-blog {
+  padding: 10px;
+  border-left: 2px solid darkgrey;
+}
+
+/* Media query for larger screens (desktop) */
+@media screen and (min-width: 769px) {
+  /* Adjust spacing or other styles for desktop */
+  .blog-details {
+    padding: 30px;
+    margin-top: 30px;
+  }
+}
